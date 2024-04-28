@@ -24,3 +24,6 @@ const navLinkSlice = createSlice({
 
 export const navLinkReducer = navLinkSlice.reducer
 export const { setProfileLink, setSettingsLink, setFriendsLink } = navLinkSlice.actions
+
+
+// Пока не удалял. Не успеваю разобраться что здесь. По идее переадресация на страницы

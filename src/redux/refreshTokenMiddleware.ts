@@ -24,3 +24,6 @@ const refreshTokenMiddleware: Middleware =
   };
 
 export default refreshTokenMiddleware;
+
+
+// Логика рефреша токена. Везде по сути одинакова. Оставил на будущее

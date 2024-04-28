@@ -7,3 +7,6 @@ export const useProfile = () => {
     queryFn: () => UserService.getProfile()
   });
 }
+
+
+// Оставил в качестве примера
