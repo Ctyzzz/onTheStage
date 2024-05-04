@@ -3,21 +3,18 @@ import {
   combineReducers,
 } from '@reduxjs/toolkit'
 import { navLinkReducer } from './slices/link'
-import { reservationReducer } from './slices/reservation'
-import { authReducer } from './slices/auth'
-import { profileReducer } from './slices/profile'
-import refreshTokenMiddleware from './refreshTokenMiddleware'
+// import { reservationReducer } from './slices/reservation'
+// import { authReducer } from './slices/auth'
+// import { profileReducer } from './slices/profile'
+// import refreshTokenMiddleware from './refreshTokenMiddleware'
 
 const rootReducer = combineReducers({
-  reservationReducer,
   navLinkReducer,
-  authReducer,
-  profileReducer,
 });
 
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(refreshTokenMiddleware),
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(refreshTokenMiddleware),
 });
 
 // @ts-ignore
