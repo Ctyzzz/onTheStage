@@ -1,24 +1,48 @@
 .overView {
-
+    background-color: #060259;
+    padding-bottom: 50px;
+    &__header{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        gap: 70px;
+        padding-left: 114px;
+        padding-top: 64px;
+        &__menu{
+            display: flex;
+            color: #FFFFFF;
+            font-family: "Montserrat";
+            font-size: 25px;
+            gap: 52px;
+            padding-bottom: 2px;
+        }
+        &__buttons{
+            display: flex;
+            align-items: flex-end;
+            padding-left: 300px;
+            gap: 49px;
+        }
+    }
 }
 
 
 
 .onlyOne {
-
+    background-color: #F5F5F5;
 }
 
 
 .subscription {
-
+    background-color: #060259;
 }
 
 
 .popular {
-
+    background-color: #060259;
 }
 
 
 .footer {
-    
-}
+    background-color: #060259;
+}   
