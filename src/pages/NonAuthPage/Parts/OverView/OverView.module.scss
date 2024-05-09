@@ -1,0 +1,82 @@
+@import "../../../../static/index.scss";
+
+.overView {
+    background-color: #060259;
+    padding-bottom: 50px;
+    &__header{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        gap: 70px;
+        padding-top: 64px;
+        &__menu{
+            display: flex;
+            color: #FFFFFF;
+            font-family: $fontMont;
+            font-size: 25px;
+            gap: 52px;
+            padding-bottom: 2px;
+        }
+        &__buttonent{
+            display: flex;
+            align-items: flex-end;
+            padding-left: 300px;
+        }
+        &__buttonreg{
+            transform: translate(0, 14px);
+        }
+    }
+    &__wrap{
+        display: flex;
+        margin-top: 180px;
+        justify-content: center;
+
+        &__welcome{
+            display: flex;
+            flex-direction: column;
+            gap: 65px;
+
+            h1{
+                font-family: $fontMont;
+                font-size: 55px;
+                color: #FFFFFF;
+                line-height: 121%;
+                letter-spacing: 2px;
+            }
+
+            p{
+                font-family: $fontMont;
+                font-size: 25px; 
+                color: #FFFFFF;
+            }
+
+            &__buttons{
+                display: flex;
+                gap: 51px;
+
+                .logBtn{
+                    background-color: rgba(28, 28, 28, 0);
+                    color: #FFFFFF;
+                    border: solid;
+                    border-radius: 25px;
+                    font-size: 25px;
+                    text-align: center;
+                    width: 165px;
+                    height: 69px;
+                    cursor: pointer;
+                    font-family: $fontMont;
+                }
+            }
+        }
+    }
+
+    &__sponsors{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 132px;
+        padding-bottom: 7%;
+    }
+}

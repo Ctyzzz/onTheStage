@@ -1,46 +1,20 @@
 import styles from "./NonAuthPage.module.scss"
 
-import logo from "../../../public/logo.svg"
-
-import EntryBtn from "@src/UI/EntryBtn/EntryBtn"
-import RegBtn from "@src/UI/RegBtn/RegBtn"
+import OverView from "./Parts/OverView/OverView"
+import OnlyOne from "./Parts/OnlyOne/OnlyOne"
+import Subscription from "./Parts/Subscription/Subscription"
+import Popular from "./Parts/Popular/Popular"
+import Footer from "./Parts/Footer/Footer"
 
 
 const NonAuthPage = () => {
     return(
         <>
-            <div className={styles.overView}>
-                <div className={styles["overView__header"]}>
-                    <img src={logo} alt="logo" width={159} height={63} />
-                    <ul className={styles["overView__header__menu"]}>
-                        <li>
-                            О нас
-                        </li>
-                        <li>
-                            Тарифы
-                        </li>
-                        <li>
-                            Популярное
-                        </li>
-                    </ul>
-                    <div className={styles["overView__header__buttons"]}>
-                        <EntryBtn></EntryBtn>
-                        <RegBtn></RegBtn>
-                    </div>
-                </div>
-            </div>
-            <div className={styles.onlyOne}>
-
-            </div>
-            <div className={styles.subscription}>
-
-            </div>
-            <div className={styles.popular}>
-
-            </div>
-            <div className={styles.footer}>
-                
-            </div>
+            <OverView></OverView>
+            <OnlyOne></OnlyOne>
+            <Subscription></Subscription>
+            <Popular></Popular>
+            <Footer></Footer>
         </>
     )
 }
