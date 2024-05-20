@@ -5,6 +5,13 @@
     margin-left: 226px;
 
     &__inputfield {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+
       width: 854px; 
       padding: 8px 16px; 
       border: none; 

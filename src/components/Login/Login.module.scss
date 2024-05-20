@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 .login {
+  width: 1878px;
   display: flex;
+  justify-content: center;
   background-color: white;
   font-family: "Montserrat", sans-serif;  
   &__back {
@@ -59,6 +61,13 @@
       }
     }   
     &__button {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+
       margin-top: 102px;
       margin-left: 240px;
       width: 855px;
