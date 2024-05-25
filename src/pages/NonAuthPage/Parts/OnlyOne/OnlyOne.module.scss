@@ -2,4 +2,53 @@
 
 .onlyOne {
     background-color: #F5F5F5;
+    padding-top: 79px;
+    &__allInOne{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #060259;
+        gap: 40px;
+
+        h1{
+            font-family: $fontMont;
+            font-size: 55px;
+        }
+
+        p{
+            font-family: $fontMont;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        &__buttons{
+            display: flex;
+            gap: 70px;
+
+            .logBtn{
+                background-color: rgba(28, 28, 28, 0);
+                color: #1108D5;
+                border: solid;
+                border-radius: 25px;
+                font-size: 25px;
+                text-align: center;
+                width: 254px;
+                height: 69px;
+                cursor: pointer;
+                font-family: $fontMont;
+            }
+        }
+    }
+
+    &__gridCompose{
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(3, minmax(150px, 500px));
+        grid-template-rows: repeat(auto-fit, minmax(30px, 1fr));
+        grid-gap: 91px;
+        padding-top: 104px;
+        padding-bottom: 210px;
+    }
 }

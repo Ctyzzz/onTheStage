@@ -1,0 +1,72 @@
+@import "../../../static/index.scss";
+
+.ticket {
+    background-image: url("../../../public/ticketbackground.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 295px;
+    height: 429px;
+    position: relative;
+    font-family: $fontMont;
+    transition: all 0.3s ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 3px;
+        background-color: #FFFFFF;
+        transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+        width: 50%; // Ширина линии при наведении
+    }
+
+    &__title {
+        width: 100%;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: #0800C6;
+        text-align: center;
+        box-sizing: border-box;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #0800C6;
+        }
+    }
+
+    &__abouts{
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: #0800C6;
+        gap: 16px;
+        padding-bottom: 25%;
+
+        &__firstabout{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 11px;
+        }
+    }
+
+    &__pricing{
+        font-size: 26px;
+        color: #0800C6;
+    }
+}

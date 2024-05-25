@@ -1,0 +1,17 @@
+@import "../../static/index.scss";
+
+.card {
+    flex: 0 0 auto;
+    width: 300px; 
+    border-radius: 10px;
+    overflow: hidden;
+
+    &__element {
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    }
+}
