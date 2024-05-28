@@ -12,35 +12,24 @@ const Popular = () => {
     const galleryRef = useRef(null);
     const [showHint, setShowHint] = useState(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowHint(false);
-        }, 1000); // Hide hint after 1 second of the first swipe
-        return () => clearTimeout(timer);
-    }, [showHint]);
-
-    const handleMouseDown = (e) => {
+    const handleSwipeStart = () => {
         setShowHint(false);
-        galleryRef.current.isDown = true;
-        galleryRef.current.startX = e.pageX - galleryRef.current.offsetLeft;
-        galleryRef.current.scrollLeft = galleryRef.current.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        galleryRef.current.isDown = false;
-    };
+    useEffect(() => {
+        const gallery = galleryRef.current;
 
-    const handleMouseUp = () => {
-        galleryRef.current.isDown = false;
-    };
+        const handleTouchStart = () => handleSwipeStart();
+        const handleMouseDown = () => handleSwipeStart();
 
-    const handleMouseMove = (e) => {
-        if (!galleryRef.current.isDown) return;
-        e.preventDefault();
-        const x = e.pageX - galleryRef.current.offsetLeft;
-        const walk = x - galleryRef.current.startX;
-        galleryRef.current.scrollLeft = galleryRef.current.scrollLeft - walk;
-    };
+        gallery.addEventListener('touchstart', handleTouchStart);
+        gallery.addEventListener('mousedown', handleMouseDown);
+
+        return () => {
+            gallery.removeEventListener('touchstart', handleTouchStart);
+            gallery.removeEventListener('mousedown', handleMouseDown);
+        };
+    }, []);
 
     return (
         <div className={styles.popular}>
@@ -51,20 +40,7 @@ const Popular = () => {
             <div 
                 className={styles["popular__cards"]}
                 ref={galleryRef}
-                onMouseDown={handleMouseDown}
-                onMouseLeave={handleMouseLeave}
-                onMouseUp={handleMouseUp}
-                onMouseMove={handleMouseMove}
             >
-                {showHint && (
-                    <div className={styles.hint}>
-                        <div className={styles.hintElement}></div>
-                        <div className={styles.hintElement}></div>
-                        <div className={styles.hintElement}></div>
-                        <div className={styles.hintElement}></div>
-                        <div className={styles.hintElement}></div>
-                    </div>
-                )}
                 <Card picture={Messiah}></Card>
                 <Card picture={Onegin}></Card>
                 <Card picture={BoD}></Card>
@@ -72,6 +48,11 @@ const Popular = () => {
                 <Card picture={Anna}></Card>
                 <Card picture={PierGunt}></Card>
             </div>
+            {showHint && (
+                <div className={styles["popular__hint"]}>
+                    <div className={styles["hint-circle"]}></div>
+                </div>
+            )}
         </div>
     );
 }
