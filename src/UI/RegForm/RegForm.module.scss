@@ -1,0 +1,50 @@
+.regform { 
+  &__input { 
+    position: relative; 
+    margin-top: 56px; 
+    margin-left: 226px;
+
+    &__inputfield {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+
+      width: 854px; 
+      padding: 8px 16px; 
+      border: none; 
+      border-bottom: 1px solid #ccc; 
+      font-family: 'Montserrat';
+      font-weight: 400;
+      font-size: 26px;
+   
+      &:focus { 
+        outline: none; 
+        border-bottom-color: #666;
+      } 
+   
+      &::placeholder { 
+        color: #aaa; 
+      } 
+    }
+
+    &__eye { 
+      width: 45px;
+      height: 35px;
+      position: absolute;
+      right: 220px;
+      top: 50%;
+      transform: translateY(-70%);
+      cursor: pointer;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url('../../../public/eye.svg');
+        
+      &.show { 
+        background-image: url('../../../public/eye.svg');
+      } 
+    } 
+  }       
+}

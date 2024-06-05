@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+.category {  
+  position: relative;
+  width: 100%;
+  display: flex;  
+  justify-content: center;  
+  background-color: white;  
+  font-family: "Montserrat", sans-serif;    
+  
+  &__left, &__right {
+    position: absolute; 
+    top: 0;
+    width: 35em; 
+    height: 60em; 
+    z-index: 1;
+
+    img { 
+      height: 100%; 
+      width: 100%;
+      object-fit: cover; 
+      display: block; 
+    }
+  }
+
+  &__left {
+    left: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(8, 3, 90, 0.9));
+      z-index: 0;
+    }
+  }
+
+  &__right {
+    right: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(8, 3, 90, 0.9));
+      z-index: 0;
+    }
+  }
+  
+  &__block {  
+    position: absolute;  
+    background-color: #fff;
+    left: 22em;
+    z-index: 2; 
+    width: 73em;
+    height: 60em; 
+    border-radius: 35px;
+
+    &__header {
+      display: flex;
+      margin-top: 80px;
+      margin-left: 75px;
+
+      h1 {
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 40px;
+        color: #08035A;
+      }
+
+      p {
+        margin-left: 258px;
+        margin-top: 10px;
+        cursor: pointer;
+
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 25px;
+        color: #ACACAC;
+      }
+    }
+
+    &__text {
+      font-family: 'Montserrat';
+      font-weight: 400;
+      font-size: 25px;
+      color: #ACACAC;
+
+      margin-top: 30px;
+      margin-left: 75px;
+    }
+
+    &__items {
+      display: grid;
+      grid-template-columns: repeat(3, 266px);
+      grid-template-rows: repeat(2, 176px);
+      gap: 110px;
+      justify-content: center;
+
+      margin-top: 81px;
+
+      &__card {
+        &.active {
+          transform: scale(1.15);
+          box-shadow: 0 20px 30px rgba(0, 4, 255, 0.7);
+        }
+      }
+    }
+    &__button {
+      position: absolute; // Делаем кнопку абсолютно позиционированной
+      bottom: 90px; // Располагаем кнопку на 20px выше нижнего края контейнера
+      left: 70%; // Центрируем кнопку по горизонтали
+      transform: translateX(-50%); // Центрируем кнопку по горизонтали
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 10; // Устанавливаем высокий z-index, чтобы кнопка была выше других элементов
+    }
+  }  
+}
