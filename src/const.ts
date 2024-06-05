@@ -1,6 +1,5 @@
-import MainPage from "@components/MainPage/MainPage"
-import Login from "@components/Login/Login"
-import Registration from "@components/Login/Registration/Registration"
+import MainPage from "./components/MainPage/MainPage"
+import NonAuthPage from "./pages/NonAuthPage/NonAuthPage"
 
 export const routes = [
   {
@@ -8,14 +7,10 @@ export const routes = [
     component: MainPage,
     isAuth: false,
   },
-    {
-      path: "/auth",
-      component: Login,
-      isAuth: false,
-    },
-    {
-      path: "/registration",
-      component: Registration,
-      isAuth: false,
-    },
+  
+  {
+    path: "/nonAuthPage",
+    component: NonAuthPage,
+    isAuth: false,
+  },
 ]  

@@ -1,0 +1,42 @@
+@import "src/static/index.scss";
+
+.ticket{
+    background-image: url("../../../public/ticketbackground.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 295px;
+    height: 429px;
+
+    font-family: $fontMont;
+
+    &__title{
+        font-size: 25px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        text-align: center;
+    }
+
+    &__abouts{
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: #FFFFFF;
+        gap: 16px;
+        padding-bottom: 25%;
+
+        &__firstabout{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 11px;
+        }
+    }
+
+    &__pricing{
+        font-size: 26px;
+        color: #FFFFFF;
+    }
+}

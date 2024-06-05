@@ -1,0 +1,39 @@
+@import "../../../../static/index.scss";
+
+.subscription {
+    background-color: #060259;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 71px;
+    padding-bottom: 20%;
+    
+
+    &__variations{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        color: #FFFFFF;
+
+        h1{
+            font-family: $fontMont;
+            font-size: 55px;
+        }
+
+        p{
+            font-family: $fontMont;
+            font-size: 25px;
+        }
+    }
+
+    &__ticketss{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 140px;
+        gap: 72px;
+        align-items: center;
+    }
+}
