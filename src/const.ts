@@ -114,6 +114,4 @@ export const Cards3 = [
     title: "ДЕТСКОЕ",
     imageUrl: img11,
   },
-];
-  
-]  
+]; 
