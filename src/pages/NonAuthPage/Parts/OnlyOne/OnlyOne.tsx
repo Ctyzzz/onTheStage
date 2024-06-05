@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"
+
 import styles from "./OnlyOne.module.scss"
 
 import GridProp from "@ui/GridProp/GridProp";
@@ -20,9 +22,11 @@ const OnlyOne = () => {
                 об остальном</p>
                 <div className={styles["onlyOne__allInOne__buttons"]}>
                     <RegBtn></RegBtn>
-                    <button className={styles.logBtn}>
-                        Войти
-                    </button>
+                    <Link to="/auth">
+                        <button className={styles.logBtn}>
+                            Войти
+                        </button>
+                    </Link>
                 </div>
             </div>
             <div className={styles["onlyOne__gridCompose"]}>

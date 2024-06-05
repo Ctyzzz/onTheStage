@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"
+
 import styles from "./Subscription.module.scss"
 
 import ico from "@public/check.svg"
