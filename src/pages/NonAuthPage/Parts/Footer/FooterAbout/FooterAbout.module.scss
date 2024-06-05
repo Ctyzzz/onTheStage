@@ -1,0 +1,14 @@
+@import "src/static/index";
+
+.about {
+
+    .logo{
+
+    }
+
+    &__title{
+        font-family: $fontMont;
+        color: #FFFFFF;
+        font-size: 18px;
+    }
+}

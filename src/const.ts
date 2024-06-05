@@ -1,12 +1,21 @@
 import MainPage from "@components/MainPage/MainPage"
+import NonAuthPage from "./pages/NonAuthPage/NonAuthPage"
 import Login from "@components/Login/Login"
 import Registration from "@components/Login/Registration/Registration"
 import Category from "@components/Category/Category"
+
+
 
 export const routes = [
   {
     path: "/",
     component: MainPage,
+    isAuth: false,
+  },
+  
+  {
+    path: "/nonAuthPage",
+    component: NonAuthPage,
     isAuth: false,
   },
     {
@@ -106,3 +115,5 @@ export const Cards3 = [
     imageUrl: img11,
   },
 ];
+  
+]  

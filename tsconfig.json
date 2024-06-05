@@ -28,5 +28,5 @@
       "@public/*": ["./public/*"]
     }
   },
-  "include": ["src", "vite.config.ts"],
+  "include": ["public", "src",  "vite.config.ts"],
 }
