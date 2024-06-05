@@ -2,4 +2,93 @@
 
 .footer {
     background-color: #060259;
-}
+    color: #FFFFFF;
+    padding: 20px;
+    font-family: $fontMont;
+  
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  
+    &__logo {
+      flex: 1;
+      
+      h1 {
+        font-size: 24px;
+        margin: 0;
+      }
+  
+      p {
+        margin: 5px 0 20px;
+      }
+    }
+  
+    &__links {
+      flex: 2;
+      display: flex;
+      justify-content: space-around;
+  
+      &__column {
+        display: flex;
+        flex-direction: column;
+  
+        a {
+          color: #fff;
+          text-decoration: none;
+          margin: 5px 0;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  
+    &__payments {
+      flex: 1;
+  
+      p {
+        margin: 0;
+      }
+  
+      &__cards {
+        display: flex;
+        img {
+          margin: 10px 5px 0;
+        }
+      }
+    }
+  
+    &__apps {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+  
+      img {
+        margin: 0 5px;
+      }
+    }
+  
+    &__social {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+  
+      a {
+        margin: 0 5px;
+      }
+    }
+  
+    &__bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+  
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+  

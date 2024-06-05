@@ -10,11 +10,11 @@ import Footer from "./Parts/Footer/Footer"
 const NonAuthPage = () => {
     return(
         <>
-            <OverView></OverView>
-            <OnlyOne></OnlyOne>
-            <Subscription></Subscription>
-            <Popular></Popular>
-            <Footer></Footer>
+            <OverView/>
+            <OnlyOne/>
+            <Subscription/>
+            <Popular/>
+            <Footer/>
         </>
     )
 }
