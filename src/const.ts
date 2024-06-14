@@ -33,7 +33,7 @@ export const routes = [
       component: Category,
       isAuth: false,
     },
-] 
+]; 
 
 import img1 from '@public/img1.svg'
 import img2 from '@public/img2.svg'
@@ -114,4 +114,6 @@ export const Cards3 = [
     title: "ДЕТСКОЕ",
     imageUrl: img11,
   },
-]; 
+];
+  
+
