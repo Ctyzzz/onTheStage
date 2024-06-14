@@ -1,20 +1,7 @@
 @import "../../static/index.scss";
 
-.onlyOne {
-    background-color: #F5F5F5;
+.nonAuthPage{
+    display: flex;
+    flex-direction: column;
+    gap: 30%;
 }
-
-
-.subscription {
-    background-color: #060259;
-}
-
-
-.popular {
-    background-color: #060259;
-}
-
-
-.footer {
-    background-color: #060259;
-}   
