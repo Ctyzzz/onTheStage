@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"
+
 import styles from "./OverView.module.scss"
 
 import logo from "@public/logo.svg"
@@ -36,9 +38,11 @@ const OverView = () => {
                     театра, попасть на премьеру и заглянуть за кулисы</p>
                     <div className={styles["overView__wrap__welcome__buttons"]}>
                         <RegBtn></RegBtn>
-                        <button className={styles.logBtn}>
-                            Войти
-                        </button>
+                        <Link to="/auth">
+                            <button className={styles.logBtn}>
+                                Войти
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div className={styles["overView__wrap__image"]}>

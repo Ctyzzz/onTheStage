@@ -2,93 +2,126 @@
 
 .footer {
     background-color: #060259;
-    color: #FFFFFF;
     padding: 20px;
+    color: #FFFFFF;
     font-family: $fontMont;
-  
-    &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    padding-top: 15%;
+
+    &__firstblock{
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  
-    &__logo {
-      flex: 1;
-      
-      h1 {
-        font-size: 24px;
-        margin: 0;
-      }
-  
-      p {
-        margin: 5px 0 20px;
-      }
-    }
-  
-    &__links {
-      flex: 2;
-      display: flex;
-      justify-content: space-around;
-  
-      &__column {
+      gap: 29px;
+
+      &__logos{
         display: flex;
         flex-direction: column;
-  
-        a {
-          color: #fff;
-          text-decoration: none;
-          margin: 5px 0;
-          
-          &:hover {
-            text-decoration: underline;
-          }
+        gap: 29px;
+        
+        p{
+          color: #FFFFFF;
+          font-size: 18px;
+        }
+      }
+
+      &__copyright{
+        p{
+          color: #AEAEAE;
+          font-size: 15px;
         }
       }
     }
-  
-    &__payments {
-      flex: 1;
-  
-      p {
-        margin: 0;
-      }
-  
-      &__cards {
-        display: flex;
-        img {
-          margin: 10px 5px 0;
-        }
-      }
-    }
-  
-    &__apps {
+
+    &__secondblock{
       display: flex;
+      flex-direction: column;
       justify-content: space-around;
-      margin-top: 20px;
-  
-      img {
-        margin: 0 5px;
+      gap: 29px;
+
+      &__abouts{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        ul{
+          display: flex;
+          flex-direction: column;
+          gap: 29px;
+          font-size: 18px;
+        } 
+      }
+
+      p{
+        color: #AEAEAE;
+        font-size: 15px;
+      }
+
+      &__logos{
+        display: flex;
+        justify-content: row;
+        gap: 20px;
       }
     }
-  
-    &__social {
+
+    &__thirdblock{
       display: flex;
-      justify-content: center;
-      margin-top: 20px;
-  
-      a {
-        margin: 0 5px;
+      flex-direction: column;
+      gap: 29px;
+
+      &__abouts2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        ul{
+          display: flex;
+          flex-direction: column;
+          gap: 29px;
+          font-size: 18px;
+        }
+      }
+
+      &__logos{
+        display: flex;
+        justify-content: row;
+        gap: 20px;
       }
     }
-  
-    &__bottom {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 12px;
-  
-      p {
-        margin: 5px 0;
+
+    &__fourthblock{
+      display: flex;
+      flex-direction: column;
+      gap: 29px;
+
+      &__pics{
+        display: grid;
+        grid-template-areas: 
+        "appstore . googleplay"
+        "appstore . googleplay"
+        "appgallery . .";
+        gap: 25px;
+
+        .appstore {
+          grid-area: appstore;
+        }
+      
+        .googleplay {
+          grid-area: googleplay;
+        }
+      
+        .appgallery {
+          grid-area: appgallery;
+        }
+      }
+
+      p{
+        color: #AEAEAE;
+        font-size: 15px;
       }
     }
-  }
+}
   

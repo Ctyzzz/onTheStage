@@ -1,10 +1,13 @@
+import {Link} from "react-router-dom"
 import styles from "./RegBtn.module.scss"
 
 const RegBtn = () => {
     return(
-        <button className={styles.regBtn}>
-            Регистрация
-        </button>
+        <Link to="/registration">
+            <button className={styles.regBtn}>
+                Регистрация
+            </button>
+        </Link>
     )
 }
 
