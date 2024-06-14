@@ -1,180 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-
-.mainPage {
-  font-family: 'Montserrat';
-  background-color: #060259;
-
-  &__scrollableContainer {
+@import "../../static/index.scss";
+.MainPage {
+    background-color: #060259;
+    padding: 20px;
     position: relative;
-  }
+    padding-bottom: 2%;
 
-  .list {
-    display: flex;
-    overflow-x: auto;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .item {
-    flex: 0 0 auto;
-    margin-right: 20px;
-    position: relative;
-    display: flex;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    flex-shrink: 0;
-
-    &__imageContainer {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; // чтобы изображение заполнило всю область
-      mask-image: radial-gradient(circle at 1%, transparent 0%, #0b087a 100% 10%, #0800c6 100% 20%, #535353 100%);
-    }
-
-    &__text {
-      color: #fff;
-      position: absolute;
-      transform: translate(-50%, -30%);
-      color: white;
-      align-items: center;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
-      &__name {
-        font-family: 'Montserrat';
-        font-size: 90px;
-      }
-
-      &__date {
-        margin-top: 2%;
-        font-size: 20px;
-      }
-
-      &__info {
-        margin-top: 3%;
-        font-family: 'Montserrat';
-        font-size: 21px;
-      }
-    }
-
-    &__btn {
-      display: flex;
-      transform: translate(-400%, 100%);
-
-      &__watch,
-      &__save {
-        border-radius: 10px;
-        background-color: #0800c6;
+    &__cards {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        width: 193px;
-        height: 50px;
-        margin-right: 10px;
-      }
-
-      &__save {
-        transform: translate(-60%, -60%);
-        width: 50px;
-        height: 50px;
-      }
-    }
-  }
-
-  &__categories {
-    margin-top: 2%;
-    position: relative;
-
-    &__list {
-      display: flex;
-      overflow-x: auto;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .case {
-      font-size: 25px;
-      margin-left: 2%;
-      color: #fff;
-      position: relative;
-      display: flex;
-      border-radius: 8px;
-      justify-content: center;
-      align-items: center;
-      flex-shrink: 0;
-
-      &__design {
-        border-radius: 10px;
-        background-color: #0800c6;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        width: 228px;
-        height: 70px;
-      }
-    }
-  }
-
-  &__newfilms,
-  &__bronnaya,
-  &__rec,
-  &__opera,
-  &__musical,
-  &__forkids {
-    margin-top: 4%;
-    position: relative;
-
-    &__title {
-      margin-left: 2%;
-      color: #fff;
-      font-size: 30px;
-      font-weight: 400;
-    }
-
-    &__list {
-      padding-left: 5%0;
-      display: flex;
-      overflow-x: auto;
-      list-style: none;
-      padding: 5% 0 0 0; /* Добавляем внутренний отступ сверху */
-      margin: 0;
-
-      &__item {
-        flex: 0 0 auto;
-        margin-right: 20px;
-      }
-    }
-  }
-
-  &__compilations,
-  &__special {
-    &__title {
-      margin-top: 5%;
-      margin-left: 2%;
-      color: #fff;
-      font-size: 30px;
-      font-weight: 400;
-    }
-    &__list {
-      display: flex;
-      overflow-x: auto;
-      list-style: none;
-      padding: 5% 0 0 0; /* Добавляем внутренний отступ сверху */
-      margin: 0;
-      &__item {
-        flex: 0 0 auto;
-        margin-right: 20px;
-        &__text {
-          color: #fff;
+        overflow-x: auto;
+        margin: 0 35px;
+        gap: 75px;
+        padding: 20px 0;
+        cursor: grab;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+            display: none;
         }
-      }
     }
-  }
+
+    &__cards:active {
+        cursor: grabbing;
+    }
+
+    &__cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    &__hint {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        opacity: 0.7;
+    }
+
+    @keyframes hintAnimation {
+        0% {
+            transform: translateX(0);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            opacity: 1;
+        }
+        20% {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        50% {
+            border-radius: 20px;
+            width: 70px;
+            height: 40px;
+            transform: translateX(-25px);
+        }
+        80% {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            transform: translateX(-50px);
+        }
+        90% {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            transform: translateX(-50px);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(-50px);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            opacity: 0;
+        }
+    }
+
+    .hint-circle {
+        background-color: #ffffff;
+        animation: hintAnimation 1s infinite ease-in-out;
+    }
+
+    .hint-circle:nth-child(1) {
+        width: 40px;
+        height: 40px;
+        animation-delay: 0s;
+    }
+
+    .hint-circle:nth-child(2) {
+        width: 40px;
+        height: 40px;
+        animation-delay: 1s;
+    }
+
+    .hint-circle:nth-child(3) {
+        width: 40px;
+        height: 40px;
+        animation-delay: 2s;
+    }
 }

@@ -1,0 +1,18 @@
+@import "../../../static/index.scss";
+
+.card {
+    flex: 0 0 auto;
+    width: 1132px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &__element {
+        img {
+            mask-image: radial-gradient(circle at 1%, transparent 0%, #0b087a 100% 10%, #0800c6 100% 20%, #535353 100%);
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    }
+}
