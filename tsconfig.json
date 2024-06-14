@@ -24,8 +24,9 @@
       "@hooks/*": ["./src/hooks/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@data/*": ["./src/data/*"],
-      "@src/*": ["./src/*"]
+      "@src/*": ["./src/*"],
+      "@public/*": ["./public/*"]
     }
   },
-  "include": ["src", "vite.config.ts"],
+  "include": ["public", "src",  "vite.config.ts"],
 }

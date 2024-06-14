@@ -1,0 +1,26 @@
+@import "../../static/index.scss";
+
+.gridProp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+
+    .img{
+
+    }
+
+    &__titles{
+        font-family: $fontMont;
+        font-size: 28px;
+        color: #060259;
+    }
+
+    &__abouts{
+        font-family: $fontMont;
+        font-size: 25px;
+        color: #060259;
+    }
+}
