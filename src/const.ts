@@ -35,6 +35,7 @@ export const routes = [
       component: Category,
       isAuth: false,
     },
+<<<<<<< HEAD
     {
       path: "/subscription",
       component: Subscription,
@@ -46,6 +47,9 @@ export const routes = [
       isAuth: false,
     },
 ] 
+=======
+]; 
+>>>>>>> 2050ebaee4c9b8afb2c9af378f64f2c0a8604938
 
 import img1 from '@public/img1.svg'
 import img2 from '@public/img2.svg'
@@ -126,4 +130,6 @@ export const Cards3 = [
     title: "ДЕТСКОЕ",
     imageUrl: img11,
   },
-]; 
+];
+  
+

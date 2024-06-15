@@ -9,13 +9,13 @@ import Footer from "./Parts/Footer/Footer"
 
 const NonAuthPage = () => {
     return(
-        <>
+        <div className={styles.nonAuthPage}>
             <OverView/>
             <OnlyOne/>
             <Subscription/>
             <Popular/>
             <Footer/>
-        </>
+        </div>
     )
 }
 
