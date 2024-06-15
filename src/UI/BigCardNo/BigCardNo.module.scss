@@ -1,0 +1,33 @@
+@import "../../static/index.scss";
+
+.bigcardno {
+    flex: 0 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+
+    &__content{
+        display: flex ;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-left: 5%;
+        padding-bottom: 5%;
+        height: 89%;
+        gap: 30px;
+
+        h1{
+            color: #FFFFFF;
+            font-family: $fontMont;
+            font-size: 115px;
+            font-weight: 450;
+        }
+    
+        p{
+            color: #FFFFFF;
+            font-family: $fontMont;
+            font-size: 37px;
+            font-weight: 400;
+            font-style: italic;
+        }
+    }
+}

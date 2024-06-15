@@ -1,0 +1,54 @@
+@import "../../static/index.scss";
+
+.bigcard {
+    flex: 0 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &__content{
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 5%;
+        height: 100%;
+        gap: 30px;
+
+        h1{
+            color: #FFFFFF;
+            font-family: $fontMont;
+            font-size: 115px;
+            font-weight: 500;
+        }
+    
+        p{
+            color: #FFFFFF;
+            font-family: $fontMont;
+            font-size: 21px;
+            font-weight: 300;
+        }
+    
+        &__abouts{
+            display: flex;
+            flex-direction: row;
+            
+            gap: 49px;
+    
+            p{
+                color: #FFFFFF;
+                font-family: $fontMont;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 15px;
+                text-align: justify;
+            }
+        }
+    
+        &__buttons{ 
+            display: flex;
+            flex-direction: row;
+            gap: 22px;
+    
+        }
+    }
+}
+

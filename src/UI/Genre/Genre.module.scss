@@ -1,0 +1,23 @@
+@import "../../static/index.scss";
+
+.genre{
+    background-color: #0800C7;
+    width: 228px;
+    height: 70px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex: 0 0 auto;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    p{
+        color: #FFFFFF;
+        font-family: $fontMont;
+        font-size: 25px;
+        font-weight: 200;
+    }
+}
