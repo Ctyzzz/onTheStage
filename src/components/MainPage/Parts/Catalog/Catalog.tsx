@@ -1,3 +1,6 @@
+import React from "react"
+import Slider from "react-slick"
+
 import styles from "./Catalog.module.scss"
 
 import BigCard from "@ui/BigCard/BigCard"
@@ -19,6 +22,17 @@ import stars from "@public/stars.svg"
 
 
 const Catalog = () => {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        cssEase: "linear",
+    };
     return(
         <div className={styles.catalog}>
             <div className={styles["catalog__cards"]}>
