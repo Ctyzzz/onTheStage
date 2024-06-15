@@ -46,5 +46,21 @@
         background-image: url('../../../public/eye.svg');
       } 
     } 
-  }       
+  }   
+  
+  button {
+    border: none;
+    margin-top: 102px;
+    margin-left: 240px;
+    width: 855px;
+    height: 86px;
+    background: linear-gradient(to right, #08035A, #150BF3);
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 36px;
+
+    color: #FFFFFF;
+  }
 }

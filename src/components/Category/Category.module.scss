@@ -12,7 +12,7 @@
     position: absolute; 
     top: 0;
     width: 35em; 
-    height: 60em; 
+    height: 60.1em; 
     z-index: 1;
 
     img { 
@@ -57,7 +57,7 @@
     left: 22em;
     z-index: 2; 
     width: 73em;
-    height: 60em; 
+    height: 60.1em; 
     border-radius: 35px;
 
     &__header {
@@ -111,16 +111,23 @@
       }
     }
     &__button {
-      position: absolute; // Делаем кнопку абсолютно позиционированной
-      bottom: 90px; // Располагаем кнопку на 20px выше нижнего края контейнера
-      left: 70%; // Центрируем кнопку по горизонтали
-      transform: translateX(-50%); // Центрируем кнопку по горизонтали
+      width: 250px;
+      height: 65px;
+      position: absolute; 
+      bottom: 90px; 
+      left: 80%; 
+      transform: translateX(-50%); 
       padding: 10px 20px;
-      background-color: #000;
-      color: #fff;
+      background: #150BF3;
       border: none;
+      border-radius: 14px;
+      color: white;
       cursor: pointer;
-      z-index: 10; // Устанавливаем высокий z-index, чтобы кнопка была выше других элементов
+      z-index: 10; 
+      font-family: 'Montserrat';
+      font-weight: 400;
+      font-size: 25px;
+      color: #FFFFFF;
     }
   }  
 }
