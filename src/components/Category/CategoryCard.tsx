@@ -6,13 +6,13 @@ interface CategoryCardProps {
   title: string;
   imageUrl: string;
   onClick: () => void;
-  className?: string; // Добавляем className как необязательный проп
+  className?: string; 
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ title, imageUrl, onClick, className }) => {
   return (
     <div
-      className={classNames(styles.card, className)} // Используем classNames для объединения классов
+      className={classNames(styles.card, className)}
       onClick={onClick}
       style={{ backgroundImage: `url(${imageUrl})` }}
     >

@@ -30,7 +30,8 @@
     "react-slick": "^0.29.0",
     "redux-toolkit": "^1.1.2",
     "run": "^1.4.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.24.1",

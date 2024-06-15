@@ -2,12 +2,27 @@ import React from "react";
 
 import styles from "./TicketsBlue.module.scss"
 
+interface TicketsBlueProps {
+    naming: string;
+    icon: string;
+    about1: string;
+    about2: string;
+    about3: string;
+    price: string;
+    w: number;
+    h: number;
+}
 
-const TicketsBlue = ({ naming, icon, about1, about2, about3, price, w, h }) => {
+const renderTextWithLineBreaks = (text: string) => {
+    return text.split('<br/>').map((line, index) => (
+        <React.Fragment key={index}>
+            {line}
+            <br />
+        </React.Fragment>
+    ));
+};
 
-    const renderTextWithLineBreaks = text => {
-        return text.split('<br/>').map((line, index) => <React.Fragment key={index}>{line}<br/></React.Fragment>);
-    };
+const TicketsBlue: React.FC<TicketsBlueProps> = ({ naming, icon, about1, about2, about3, price, w, h }) => {
 
     return(
         <div className={styles.ticket}>

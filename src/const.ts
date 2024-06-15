@@ -3,6 +3,8 @@ import NonAuthPage from "./pages/NonAuthPage/NonAuthPage"
 import Login from "@components/Login/Login"
 import Registration from "@components/Login/Registration/Registration"
 import Category from "@components/Category/Category"
+import Subscription from "@components/Subscription/Subscription"
+import Payment from "@components/Payment/Payment"
 
 
 
@@ -31,6 +33,16 @@ export const routes = [
     {
       path: "/category",
       component: Category,
+      isAuth: false,
+    },
+    {
+      path: "/subscription",
+      component: Subscription,
+      isAuth: false,
+    },
+    {
+      path: "/payment",
+      component: Payment,
       isAuth: false,
     },
 ] 

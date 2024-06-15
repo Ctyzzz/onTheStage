@@ -6,7 +6,7 @@ import CategoryCard from './CategoryCard';
 import { Cards1, Cards2, Cards3 } from '@src/const';
 import ProgressIndicator from './ProgressIndicator';
 
-const Category = () => {
+const Category: React.FC = () => {
   const [progress, setProgress] = useState(1);
   const [activeCards, setActiveCards] = useState<string[]>([]);
 
