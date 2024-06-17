@@ -1,0 +1,39 @@
+@import "../../static/index.scss";
+
+.header{
+    background-color: #060259;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    
+
+
+    &__variables{
+        display: flex;
+        flex-direction: row;
+        gap: 52px;
+        
+
+        ul{
+            color: #FFFFFF;
+            font-family: $fontMont;
+            font-size: 25px;
+        }
+
+        p{
+            color: #FFFFFF;
+            font-family: $fontMont;
+            font-size: 25px;
+        }
+    }
+
+    &__acc{
+        display: flex;
+        flex-direction: row;
+        gap: 47px;
+        align-items: flex-end;
+    }
+}

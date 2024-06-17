@@ -1,0 +1,69 @@
+@import "../../static/index.scss";
+
+.bigcard {
+    flex: 0 0 auto;
+    border-radius: 55px;
+    overflow: hidden;
+    position: relative;
+    width: 1132px;
+    height: 628px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at right top, rgba(255, 255, 255, 0) 40%, #150BF3 100%);
+        z-index: 1;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 5%;
+        height: 100%;
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+
+        h1 {
+            color: #FFFFFF;
+            font-family: $fontMont;
+            font-size: 115px;
+            font-weight: 500;
+        }
+
+        p {
+            color: #FFFFFF;
+            font-family: $fontMont;
+            font-size: 21px;
+            font-weight: 300;
+        }
+
+        &__abouts {
+            display: flex;
+            flex-direction: row;
+            gap: 49px;
+
+            p {
+                color: #FFFFFF;
+                font-family: $fontMont;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 15px;
+                text-align: justify;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 22px;
+        }
+    }
+}

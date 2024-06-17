@@ -1,0 +1,127 @@
+@import "../../static/index.scss";
+
+.footer {
+    background-color: #060259;
+    padding: 20px;
+    color: #FFFFFF;
+    font-family: $fontMont;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    padding-top: 3%;
+
+    &__firstblock{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 29px;
+
+      &__logos{
+        display: flex;
+        flex-direction: column;
+        gap: 29px;
+        
+        p{
+          color: #FFFFFF;
+          font-size: 18px;
+        }
+      }
+
+      &__copyright{
+        p{
+          color: #AEAEAE;
+          font-size: 15px;
+        }
+      }
+    }
+
+    &__secondblock{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 29px;
+
+      &__abouts{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        ul{
+          display: flex;
+          flex-direction: column;
+          gap: 29px;
+          font-size: 18px;
+        } 
+      }
+
+      p{
+        color: #AEAEAE;
+        font-size: 15px;
+      }
+
+      &__logos{
+        display: flex;
+        justify-content: row;
+        gap: 20px;
+      }
+    }
+
+    &__thirdblock{
+      display: flex;
+      flex-direction: column;
+      gap: 29px;
+
+      &__abouts2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        ul{
+          display: flex;
+          flex-direction: column;
+          gap: 29px;
+          font-size: 18px;
+        }
+      }
+
+      &__logos{
+        display: flex;
+        justify-content: row;
+        gap: 20px;
+      }
+    }
+
+    &__fourthblock{
+      display: flex;
+      flex-direction: column;
+      gap: 29px;
+
+      &__pics{
+        display: grid;
+        grid-template-areas: 
+        "appstore . googleplay"
+        "appstore . googleplay"
+        "appgallery . .";
+        gap: 25px;
+
+        .appstore {
+          grid-area: appstore;
+        }
+      
+        .googleplay {
+          grid-area: googleplay;
+        }
+      
+        .appgallery {
+          grid-area: appgallery;
+        }
+      }
+
+      p{
+        color: #AEAEAE;
+        font-size: 15px;
+      }
+    }
+}
+  

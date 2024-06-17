@@ -1,0 +1,56 @@
+@import "../../../../static//index.scss";
+
+.catalog{
+    background-color: #060259;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
+    padding-top: 1%;
+    gap: 62px;
+    
+    &__cards{
+        display: flex;
+        overflow-x: auto;
+        flex-direction: row;
+        gap: 100px;
+        cursor: grab;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &__cards:active {
+            cursor: grabbing;
+        }
+    
+        &__cards::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__genres{
+        display: flex;
+        flex-direction: row;
+        gap: 34px;
+        overflow-x: auto;
+        margin: 0 114px;
+
+        cursor: grab;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &__cards:active {
+            cursor: grabbing;
+        }
+    
+        &__cards::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}

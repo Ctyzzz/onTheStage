@@ -1,0 +1,42 @@
+@import "../../../../static//index.scss";
+
+.teenspec{
+    background-color: #060259;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 85px;
+    padding-top: 1%;
+    padding-bottom: 5%;
+
+    p{
+        font-family: $fontMont;
+        color: #FFFFFF;
+        font-size: 35px;
+        font-weight: 400;
+        margin-left: 111px;
+    }
+
+    &__cards {
+        display: flex;
+        overflow-x: auto;
+        margin-left: 111px;
+        gap: 72px;
+        padding: 20px 0;
+        cursor: grab;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__cards:active {
+        cursor: grabbing;
+    }
+
+    &__cards::-webkit-scrollbar {
+        display: none;
+    }
+}
