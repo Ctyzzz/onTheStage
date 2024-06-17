@@ -10,44 +10,26 @@ import Forest from "@public/forest.png"
 import Cabaret from "@public/cabaret.png"
 import Number13 from "@public/number13.png"
 
+import MakeUpHover from "@public/makeuphover.png"
+import SonHover from "@public/sonhover.png"
+import DumbHover from "@public/dumbhover.png"
+import MayakovskyHover from "@public/mayakovskyhover.png"
+import ForestHover from "@public/foresthover.png"
+import CabaretHover from "@public/cabarethover.png"
+import Number13Hover from "@public/number13hover.png"
+
 const PlatformSelection = () => {
     return(
         <div className={styles.platformselection}>
             <p>Выбор платформы</p>
             <div className={styles["platformselection__cards"]}>
-                {/* <RateCard rating={"8.9"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.9"} agerate={"18+"} background={}/>
-                <RateCard rating={"7.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.7"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.2"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.7"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.3"} agerate={"14+"} background={}/>
-                <RateCard rating={"7.5"} agerate={"16+"} background={}/>
-                <RateCard rating={"6.8"} agerate={"6+"} background={}/>
-                <RateCard rating={"6.8"} agerate={"6+"} background={}/>
-                <RateCard rating={"8.2"} agerate={"6+"} background={}/>
-                <RateCard rating={"6.2"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.5"} agerate={"6+"} background={}/>
-                <RateCard rating={"9.3"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.2"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.1"} agerate={"18+"} background={}/>
-                <RateCard rating={"7.8"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.9"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.4"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.1"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.2"} agerate={"18+"} background={}/> */}
-                <RateCard pic={MakeUp}/>
-                <RateCard pic={Son}/>
-                <RateCard pic={Dumb}/>
-                <RateCard pic={Mayakovsky}/>
-                <RateCard pic={Forest}/>
-                <RateCard pic={Cabaret}/>
-                <RateCard pic={Number13}/>
+                <RateCard pic={MakeUp} hoverPic={MakeUpHover}/>
+                <RateCard pic={Son} hoverPic={SonHover}/>
+                <RateCard pic={Dumb} hoverPic={DumbHover}/>
+                <RateCard pic={Mayakovsky} hoverPic={MayakovskyHover}/>
+                <RateCard pic={Forest} hoverPic={ForestHover}/>
+                <RateCard pic={Cabaret} hoverPic={CabaretHover}/>
+                <RateCard pic={Number13} hoverPic={Number13Hover}/>
             </div>
         </div>
     )
