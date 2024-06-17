@@ -10,44 +10,27 @@ import Karamazovi from "@public/karamazovi.png"
 import Yearning from "@public/yearning.png"
 import QueenOfSpades from "@public/queenofspades.png"
 
+import TriviataHover from "@public/triviatahover.png"
+import RigolettoHover from "@public/rigolettohover.png"
+import AidaHover from "@public/aidahover.png"
+import FaustHover from "@public/fausthover.png"
+import KaramazoviHover from "@public/karamazovihover.png"
+import YearningHover from "@public/yearninghover.png"
+import QueenOfSpadesHover from "@public/queenofspadeshover.png"
+
+
 const Opera = () => {
     return(
         <div className={styles.opera}>
             <p>Опера</p>
             <div className={styles["opera__cards"]}>
-                {/* <RateCard rating={"8.9"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.9"} agerate={"18+"} background={}/>
-                <RateCard rating={"7.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.7"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.2"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.7"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.5"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.3"} agerate={"14+"} background={}/>
-                <RateCard rating={"7.5"} agerate={"16+"} background={}/>
-                <RateCard rating={"6.8"} agerate={"6+"} background={}/>
-                <RateCard rating={"6.8"} agerate={"6+"} background={}/>
-                <RateCard rating={"8.2"} agerate={"6+"} background={}/>
-                <RateCard rating={"6.2"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.5"} agerate={"6+"} background={}/>
-                <RateCard rating={"9.3"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.2"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.1"} agerate={"18+"} background={}/>
-                <RateCard rating={"7.8"} agerate={"18+"} background={}/>
-                <RateCard rating={"6.9"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.4"} agerate={"18+"} background={}/>
-                <RateCard rating={"9.1"} agerate={"18+"} background={}/>
-                <RateCard rating={"8.2"} agerate={"18+"} background={}/> */}
-                <RateCard pic={Triviata}/>
-                <RateCard pic={Rigoletto}/>
-                <RateCard pic={Aida}/>
-                <RateCard pic={Faust}/>
-                <RateCard pic={Karamazovi}/>
-                <RateCard pic={Yearning}/>
-                <RateCard pic={QueenOfSpades}/>
+                <RateCard pic={Triviata} hoverPic={TriviataHover}/>
+                <RateCard pic={Rigoletto} hoverPic={RigolettoHover}/>
+                <RateCard pic={Aida} hoverPic={AidaHover}/>
+                <RateCard pic={Faust} hoverPic={FaustHover}/>
+                <RateCard pic={Karamazovi} hoverPic={KaramazoviHover}/>
+                <RateCard pic={Yearning} hoverPic={YearningHover}/>
+                <RateCard pic={QueenOfSpades} hoverPic={QueenOfSpadesHover}/>
             </div>
         </div>
     )
