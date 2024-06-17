@@ -7,7 +7,6 @@ import {
 import { Provider } from 'react-redux';
 import Router from './Router';
 import { store } from '@redux/store';
-import AuthProvider from './providers/AuthProvider';
 import './static/index.scss';
 
 const rootElement = document.getElementById('root')!;
@@ -15,12 +14,10 @@ const queryClient = new QueryClient()
 
 ReactDOM.createRoot(rootElement).render(
   <QueryClientProvider client={queryClient}>
-    <AuthProvider>
       <BrowserRouter>
         <Provider store={store}>
           <Router />
         </Provider>
       </BrowserRouter>
-    </AuthProvider>
   </QueryClientProvider>
 );

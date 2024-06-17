@@ -1,30 +1,15 @@
-import {
-  configureStore,
-  combineReducers,
-} from '@reduxjs/toolkit'
-import { navLinkReducer } from './slices/link'
-// import { reservationReducer } from './slices/reservation'
-// import { authReducer } from './slices/auth'
-// import { profileReducer } from './slices/profile'
-// import refreshTokenMiddleware from './refreshTokenMiddleware'
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer from './features/auth/authSlice';
+import registrationReducer from './features/auth/registrationSlice';
 
-const rootReducer = combineReducers({
-  navLinkReducer,
-});
-
-export const store = configureStore({
-  reducer: rootReducer,
-  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(refreshTokenMiddleware),
-});
-
-// @ts-ignore
 export type RootState = ReturnType<typeof store.getState>;
-
-// @ts-ignore
 export type AppDispatch = typeof store.dispatch;
 
-// @ts-ignore
-export type DefaultThunkApi = {
-  state: RootState;
-  dispatch: AppDispatch;
-};
+export const store = configureStore({
+  reducer: {
+    auth: authReducer,
+    registration: registrationReducer,
+  },
+});
+
+export default store;
