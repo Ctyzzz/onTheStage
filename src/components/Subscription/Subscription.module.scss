@@ -93,10 +93,72 @@
 
       margin-top: 30px;
       margin-left: 75px;
+      margin-bottom: 5%;
     }
 
     &__tickets {
-      margin-top: 2em;
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin: 0 68px;
+      gap: 75px;
+      padding: 20px 0;
+      cursor: grab;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+          display: none;
+      }
+
+      &:active {
+        cursor: grabbing;
+      }
+
+      > div {
+        flex: 0 0 auto;
+        width: calc(100% / 3 - 50px); 
+      }
+    }
+
+    &__indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10%;
+
+      &__background {
+        width: 71px;
+        height: 9px;
+        background-color: #C4C4C4;
+        position: relative;
+        border-radius: 6px;
+      }
+
+      &__active {
+        width: 44px;
+        height: 9px;
+        background-color: #150BF3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 6px;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &__note {
+      font-family: 'Montserrat';
+      font-weight: 400;
+      font-size: 20px;
+      color: #ACACAC;
+      text-align: center;
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 6%;
     }
   }
 }
