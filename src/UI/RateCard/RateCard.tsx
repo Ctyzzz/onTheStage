@@ -1,8 +1,20 @@
 import { useState } from 'react';
+
+import Modal from "@components/UnavailableModal/UnavailableModal"
+
 import styles from "./RateCard.module.scss";
 
-const RateCard = ({ rating, agerate, background, pic, hoverPic }) => {
+const RateCard = ({ pic, hoverPic }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+    const handleCardClick = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
 
   return (
     <div
@@ -10,7 +22,7 @@ const RateCard = ({ rating, agerate, background, pic, hoverPic }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={styles.imageContainer}>
+      <div className={styles.imageContainer} onClick={handleCardClick}>
         <img 
           src={pic} 
           alt="cardpic" 
@@ -22,6 +34,7 @@ const RateCard = ({ rating, agerate, background, pic, hoverPic }) => {
           className={`${styles.cardpic} ${isHovered ? '' : styles.hidden}`}
         />
       </div>
+      <Modal show={showModal} onClose={handleCloseModal} />
     </div>
   );
 };

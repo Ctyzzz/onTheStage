@@ -1,3 +1,5 @@
+import React, { useRef, useEffect } from "react";
+
 import styles from "./TeenSpec.module.scss"
 
 import RateCard from "@ui/RateCard/RateCard";
@@ -16,10 +18,32 @@ import ScientistsHover from "@public/scientistshover.png"
 
 
 const TeenSpec = () => {
+    const cardsRef = useRef<HTMLDivElement>(null);
+
+  const handleWheel = (e: WheelEvent) => {
+    if (cardsRef.current) {
+      e.preventDefault();
+      cardsRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
+  useEffect(() => {
+    const cards = cardsRef.current;
+    if (cards) {
+      cards.addEventListener('wheel', handleWheel);
+    }
+
+    return () => {
+      if (cards) {
+        cards.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, []);
+
     return(
         <div className={styles.teenspec}>
             <p>Спектакли для детей от 6 лет</p>
-            <div className={styles["teenspec__cards"]}>
+            <div className={styles["teenspec__cards"]} ref={cardsRef}>
                 <RateCard pic={Nutcracker} hoverPic={NutcrackerHover}/>
                 <RateCard pic={Cinderella} hoverPic={CinderellaHover}/>
                 <RateCard pic={ThreeIvana} hoverPic={ThreeIvanaHover}/>
