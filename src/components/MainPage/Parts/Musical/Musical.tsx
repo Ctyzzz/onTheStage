@@ -1,3 +1,5 @@
+import React, { useRef, useEffect } from "react";
+
 import styles from "./Musical.module.scss"
 
 import RateCard from "@ui/RateCard/RateCard";
@@ -19,10 +21,32 @@ import CabaretHover from "@public/cabarethover.png"
 import DumbHover from "@public/dumbhover.png"
 
 const Musical = () => {
+    const cardsRef = useRef<HTMLDivElement>(null);
+
+  const handleWheel = (e: WheelEvent) => {
+    if (cardsRef.current) {
+      e.preventDefault();
+      cardsRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
+  useEffect(() => {
+    const cards = cardsRef.current;
+    if (cards) {
+      cards.addEventListener('wheel', handleWheel);
+    }
+
+    return () => {
+      if (cards) {
+        cards.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, []);
+
     return(
         <div className={styles.musical}>
             <p>Мюзиклы</p>
-            <div className={styles["musical__cards"]}>
+            <div className={styles["musical__cards"]} ref={cardsRef}>
                 <RateCard pic={Space} hoverPic={SpaceHover}/>
                 <RateCard pic={Forest}  hoverPic={ForestHover}/>
                 <RateCard pic={Revizor} hoverPic={RevizorHover}/>

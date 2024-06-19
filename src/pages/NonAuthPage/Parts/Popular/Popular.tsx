@@ -1,9 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-
 import styles from "./Popular.module.scss";
-
 import Card from "@ui/Card/Card";
-
 import Messiah from "@public/messiah.png";
 import Onegin from "@public/Onegin.png";
 import BoD from "@public/balletofdifference.png";
@@ -24,13 +21,19 @@ const Popular = () => {
 
         const handleTouchStart = () => handleSwipeStart();
         const handleMouseDown = () => handleSwipeStart();
+        const handleWheel = (e) => {
+            e.preventDefault();
+            gallery.scrollLeft += e.deltaY;
+        };
 
         gallery.addEventListener('touchstart', handleTouchStart);
         gallery.addEventListener('mousedown', handleMouseDown);
+        gallery.addEventListener('wheel', handleWheel);
 
         return () => {
             gallery.removeEventListener('touchstart', handleTouchStart);
             gallery.removeEventListener('mousedown', handleMouseDown);
+            gallery.removeEventListener('wheel', handleWheel);
         };
     }, []);
 

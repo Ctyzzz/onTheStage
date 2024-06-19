@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+
+import Modal from "@components/UnavailableModal/UnavailableModal"
+
 import styles from "./BigCard.module.scss";
 import play from "@public/play.svg";
 import mark from "@public/mark.svg";
@@ -13,6 +16,16 @@ const BigCard = ({ naming, year, theatre, duration, rate, about, background }) =
         ));
     };
 
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCardClick = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
     return (
         <div className={styles.bigcard} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.gradient}></div>
@@ -25,10 +38,11 @@ const BigCard = ({ naming, year, theatre, duration, rate, about, background }) =
                     <p>{rate}</p>
                 </div>
                 <p>{renderTextWithLineBreaks(about)}</p>
-                <div className={styles["bigcard__content__buttons"]}>
+                <div className={styles["bigcard__content__buttons"]} onClick={handleCardClick}>
                     <img src={play} alt="play" />
                     <img src={mark} alt="mark" />
                 </div>
+                <Modal show={showModal} onClose={handleCloseModal} />
             </div>
         </div>
     );

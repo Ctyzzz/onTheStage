@@ -1,3 +1,5 @@
+import React, { useRef, useEffect } from "react";
+
 import styles from "./Opera.module.scss"
 
 import RateCard from "@ui/RateCard/RateCard";
@@ -20,10 +22,32 @@ import QueenOfSpadesHover from "@public/queenofspadeshover.png"
 
 
 const Opera = () => {
+    const cardsRef = useRef<HTMLDivElement>(null);
+
+  const handleWheel = (e: WheelEvent) => {
+    if (cardsRef.current) {
+      e.preventDefault();
+      cardsRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
+  useEffect(() => {
+    const cards = cardsRef.current;
+    if (cards) {
+      cards.addEventListener('wheel', handleWheel);
+    }
+
+    return () => {
+      if (cards) {
+        cards.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, []);
+    
     return(
         <div className={styles.opera}>
             <p>Опера</p>
-            <div className={styles["opera__cards"]}>
+            <div className={styles["opera__cards"]} ref={cardsRef}>
                 <RateCard pic={Triviata} hoverPic={TriviataHover}/>
                 <RateCard pic={Rigoletto} hoverPic={RigolettoHover}/>
                 <RateCard pic={Aida} hoverPic={AidaHover}/>

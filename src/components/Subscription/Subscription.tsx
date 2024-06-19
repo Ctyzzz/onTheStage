@@ -21,8 +21,26 @@ const Subscription: React.FC = () => {
     }
   };
 
+  const handleWheel = (e: WheelEvent) => {
+    if (ticketsRef.current) {
+      e.preventDefault();
+      ticketsRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
   useEffect(() => {
     handleScroll();
+
+    const tickets = ticketsRef.current;
+    if (tickets) {
+      tickets.addEventListener('wheel', handleWheel);
+    }
+
+    return () => {
+      if (tickets) {
+        tickets.removeEventListener('wheel', handleWheel);
+      }
+    };
   }, []);
 
   return (

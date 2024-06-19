@@ -1,3 +1,5 @@
+import React, { useRef, useEffect } from "react";
+
 import styles from "./PlatformSelection.module.scss"
 
 import RateCard from "@ui/RateCard/RateCard";
@@ -19,10 +21,32 @@ import CabaretHover from "@public/cabarethover.png"
 import Number13Hover from "@public/number13hover.png"
 
 const PlatformSelection = () => {
+    const cardsRef = useRef<HTMLDivElement>(null);
+
+  const handleWheel = (e: WheelEvent) => {
+    if (cardsRef.current) {
+      e.preventDefault();
+      cardsRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
+  useEffect(() => {
+    const cards = cardsRef.current;
+    if (cards) {
+      cards.addEventListener('wheel', handleWheel);
+    }
+
+    return () => {
+      if (cards) {
+        cards.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, []);
+
     return(
         <div className={styles.platformselection}>
             <p>Выбор платформы</p>
-            <div className={styles["platformselection__cards"]}>
+            <div className={styles["platformselection__cards"]} ref={cardsRef}>
                 <RateCard pic={MakeUp} hoverPic={MakeUpHover}/>
                 <RateCard pic={Son} hoverPic={SonHover}/>
                 <RateCard pic={Dumb} hoverPic={DumbHover}/>
