@@ -11,13 +11,8 @@ import Payment from "@components/Payment/Payment"
 export const routes = [
     {
       path: "/",
-      authComponent: NonAuthPage,
-      nonAuthComponent: NonAuthPage,
-    },
-    {
-      path: "/mainpage",
       authComponent: MainPage,
-      nonAuthComponent: MainPage,
+      nonAuthComponent: NonAuthPage,
     },
     {
       path: "/auth",
