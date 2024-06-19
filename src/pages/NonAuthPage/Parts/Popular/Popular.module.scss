@@ -34,21 +34,13 @@
         margin: 0 35px;
         gap: 75px;
         padding: 20px 0;
-        cursor: grab;
         scrollbar-width: none;
         -ms-overflow-style: none;
         -webkit-overflow-scrolling: touch;
+
         &::-webkit-scrollbar {
             display: none;
         }
-    }
-
-    &__cards:active {
-        cursor: grabbing;
-    }
-
-    &__cards::-webkit-scrollbar {
-        display: none;
     }
 
     &__hint {

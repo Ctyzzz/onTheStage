@@ -49,6 +49,7 @@
 
         ul{
           display: flex;
+          cursor: pointer;
           flex-direction: column;
           gap: 29px;
           font-size: 18px;
@@ -79,6 +80,7 @@
 
         ul{
           display: flex;
+          cursor: pointer;
           flex-direction: column;
           gap: 29px;
           font-size: 18px;
@@ -86,6 +88,7 @@
       }
 
       &__logos{
+        cursor: pointer;
         display: flex;
         justify-content: row;
         gap: 20px;
@@ -99,6 +102,7 @@
 
       &__pics{
         display: grid;
+        cursor: pointer;
         grid-template-areas: 
         "appstore . googleplay"
         "appstore . googleplay"

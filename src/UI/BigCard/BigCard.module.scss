@@ -28,14 +28,13 @@
         padding-left: 5%;
         height: 100%;
         gap: 30px;
-        position: relative;
-        z-index: 2;
 
         h1 {
             color: #FFFFFF;
             font-family: $fontMont;
             font-size: 115px;
             font-weight: 500;
+            z-index: 2;
         }
 
         p {
@@ -43,6 +42,7 @@
             font-family: $fontMont;
             font-size: 21px;
             font-weight: 300;
+            z-index: 2;
         }
 
         &__abouts {
@@ -64,6 +64,7 @@
             display: flex;
             flex-direction: row;
             gap: 22px;
+            z-index: 2;
         }
     }
 }

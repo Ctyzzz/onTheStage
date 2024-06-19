@@ -1,3 +1,5 @@
+import React, { useRef, useEffect } from "react";
+
 import styles from "./Bronnaya.module.scss"
 
 import RateCard from "@ui/RateCard/RateCard";
@@ -19,10 +21,32 @@ import RabbitsHover from "@public/tworabbitshover.png"
 import FaustHover from "@public/fausthover.png"
 
 const Bronnaya = () => {
+    const cardsRef = useRef<HTMLDivElement>(null);
+
+  const handleWheel = (e: WheelEvent) => {
+    if (cardsRef.current) {
+      e.preventDefault();
+      cardsRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
+  useEffect(() => {
+    const cards = cardsRef.current;
+    if (cards) {
+      cards.addEventListener('wheel', handleWheel);
+    }
+
+    return () => {
+      if (cards) {
+        cards.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, []);
+
     return(
         <div className={styles.bronnaya}>
             <p>Спектакли вашего любимого театра «Малая Бронная»</p>
-            <div className={styles["bronnaya__cards"]}>
+            <div className={styles["bronnaya__cards"]} ref={cardsRef}>
                 <RateCard pic={Space} hoverPic={SpaceHover}/>
                 <RateCard pic={Forest} hoverPic={ForestHover}/>
                 <RateCard pic={Revizor} hoverPic={RevizorHover}/>

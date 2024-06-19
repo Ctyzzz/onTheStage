@@ -13,7 +13,6 @@
         overflow-x: auto;
         flex-direction: row;
         gap: 100px;
-        cursor: grab;
         scrollbar-width: none;
         -ms-overflow-style: none;
         -webkit-overflow-scrolling: touch;
@@ -30,14 +29,87 @@
         }
     }
 
+    &__hint {
+        position: absolute;
+        top: 50%;
+        right: 160px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        opacity: 0.7;
+    }
+
+    @keyframes hintAnimation {
+        0% {
+            transform: translateX(0);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            opacity: 1;
+        }
+        20% {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        50% {
+            border-radius: 20px;
+            width: 70px;
+            height: 40px;
+            transform: translateX(-25px);
+        }
+        80% {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            transform: translateX(-50px);
+        }
+        90% {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            transform: translateX(-50px);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(-50px);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            opacity: 0;
+        }
+    }
+
+    .hint-circle {
+        background-color: #ffffff;
+        animation: hintAnimation 1s infinite ease-in-out;
+    }
+
+    .hint-circle:nth-child(1) {
+        width: 40px;
+        height: 40px;
+        animation-delay: 0s;
+    }
+
+    .hint-circle:nth-child(2) {
+        width: 40px;
+        height: 40px;
+        animation-delay: 1s;
+    }
+
+    .hint-circle:nth-child(3) {
+        width: 40px;
+        height: 40px;
+        animation-delay: 2s;
+    }
+
     &__genres{
         display: flex;
         flex-direction: row;
         gap: 34px;
         overflow-x: auto;
         margin: 0 114px;
-
-        cursor: grab;
         scrollbar-width: none;
         -ms-overflow-style: none;
         -webkit-overflow-scrolling: touch;

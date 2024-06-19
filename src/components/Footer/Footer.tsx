@@ -1,9 +1,9 @@
 import styles from "./Footer.module.scss"
 
 import logo from "@public/logo.svg"
-import MasterCard from "@public/mastercard.svg"
-import VISA from "@public/visa.svg"
-import MIR from "@public/mir.svg"
+import MasterCard from "@public/mastercardsmall.svg"
+import VISA from "@public/visasmall.svg"
+import MIR from "@public/mirsmall.svg"
 import Instagram from "@public/instagram.svg"
 import Telegram from "@public/telegram.svg"
 import TikTok from "@public/tiktok.svg"
