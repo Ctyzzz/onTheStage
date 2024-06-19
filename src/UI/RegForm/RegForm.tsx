@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../redux/store';
-import { registerUser } from '../../redux/features/auth/registrationSlice';
-import styles from './RegForm.module.scss';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'; 
+import { useDispatch, useSelector } from 'react-redux'; 
+import { AppDispatch, RootState } from '../../redux/store'; 
+import { registerUser } from '../../redux/features/auth/authSlice';
+import styles from './RegForm.module.scss'; 
+import { useNavigate } from 'react-router-dom'; 
 
 const RegForm: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
+
+  const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  
   const [phoneError, setPhoneError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  const dispatch: AppDispatch = useDispatch();
-  const { loading, error, isSuccess } = useSelector((state: RootState) => state.registration);
-  const navigate = useNavigate();
+  const status = useSelector((state: RootState) => state.authReducer.accessToken.status); 
+  const isSuccess = status === 'succeeded';
+  const error = status === 'failed' || status === 'error';
 
   useEffect(() => {
     if (isSuccess) {
@@ -27,7 +29,7 @@ const RegForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (phoneNumber.length != 11) {
+    if (phoneNumber.length !== 11) {
       setPhoneError('Номер телефона должен состоять из 11 цифр');
       return;
     } else {
@@ -82,10 +84,10 @@ const RegForm: React.FC = () => {
         <span className={`${styles.regform__input__eye} ${showPassword ? 'show' : ''}`} onClick={() => setShowPassword(!showPassword)}></span>
         {passwordError && <p className={styles.errorMessage}>{passwordError}</p>}
       </div>
-      <button type="submit" disabled={loading}>
+      <button type="submit" disabled={status === 'loading'}>
         Зарегистрироваться
       </button>
-      {error && <p>{error}</p>}
+      {error && <p>Ошибка регистрации. Попробуйте снова.</p>}
     </form>
   );
 };

@@ -1,63 +1,66 @@
-import React, { useState, useEffect } from 'react';    
-import { useDispatch, useSelector } from 'react-redux';    
-import { AppDispatch, RootState } from '../../redux/store';  
-import { loginUser } from '../../redux/features/auth/authSlice';    
-import styles from '../AuthForm/AuthForm.module.scss';    
+import React, { useState, useEffect } from 'react'; 
+import { useForm, SubmitHandler } from 'react-hook-form'; 
+import { useDispatch, useSelector } from 'react-redux'; 
+import { loginUser } from '../../redux/features/auth/authSlice'; 
 import { useNavigate } from 'react-router-dom'; 
-  
-const AuthForm: React.FC = () => {    
-  const [phoneNumber, setPhoneNumber] = useState('');    
-  const [password, setPassword] = useState('');    
-  const [showPassword, setShowPassword] = useState(false);    
-  
-  const dispatch: AppDispatch = useDispatch();  
-  const { loading, error, isAuthenticated } = useSelector((state: RootState) => state.auth); 
-  const navigate = useNavigate(); 
-   
-  useEffect(() => { 
-    if (isAuthenticated) { 
-      navigate('/'); 
-    } 
-  }, [isAuthenticated, navigate]); 
+import { RootState, AppDispatch } from '@redux/store'; 
 
-  useEffect(() => {
-    if (error) {
-      console.error('Login error:', error);
+import styles from '../AuthForm/AuthForm.module.scss'; 
+
+interface IFormInput { 
+  phoneNumber: string; 
+  password: string; 
+} 
+
+const AuthForm: React.FC = () => { 
+  const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>(); 
+  const dispatch: AppDispatch = useDispatch(); 
+  const [showPassword, setShowPassword] = useState(false); 
+  const status = useSelector((state: RootState) => state.authReducer.accessToken.status); 
+  const [isSend, setIsSend] = useState(false); 
+  const navigate = useNavigate(); 
+
+  const onSubmit: SubmitHandler<IFormInput> = ({ phoneNumber, password }) => { 
+    dispatch(loginUser({ phone: phoneNumber, password })); 
+    setIsSend(true); 
+  }; 
+
+  useEffect(() => { 
+    if (isSend && status === 'succeeded') { 
+      close()
+      navigate('/')
+    } else if (status === 'error') { 
+      setIsSend(false); 
     }
-  }, [error]);
-  
-  const handleSubmit = (e: React.FormEvent) => {    
-    e.preventDefault();    
-    dispatch(loginUser({ phone: phoneNumber, password }));    
-  };    
-  
-  return (    
-    <form onSubmit={handleSubmit} className={styles.authform}>    
-      <div className={`${styles.authform__input} ${error ? styles.error : ''}`}>    
-        <input    
-          type="number"    
-          className={styles.authform__input__inputfield}    
-          value={phoneNumber}    
-          onChange={(e) => setPhoneNumber(e.target.value)}    
-          placeholder="Номер телефона"    
-        />    
-      </div>    
-      <div className={`${styles.authform__input} ${error ? styles.error : ''}`}>    
-        <input    
-          type={showPassword ? "text" : "password"}    
-          className={styles.authform__input__inputfield}    
-          value={password}    
-          onChange={(e) => setPassword(e.target.value)}    
-          placeholder="Введите пароль"    
-        />    
-        <span className={`${styles.authform__input__eye} ${showPassword ? 'show' : ''}`} onClick={() => setShowPassword(!showPassword)}></span>    
-      </div>    
-      <button type="submit" disabled={loading}>    
-        Войти    
-      </button>    
-      {error && <p>{error}</p>}  
-    </form>    
-  );    
-};    
-  
+  }, [status, isSend, navigate]); 
+
+  return ( 
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.authform}> 
+      <div className={`${styles.authform__input} ${errors.phoneNumber ? styles.error : ''}`}> 
+        <input 
+          type="tel" 
+          className={styles.authform__input__inputfield} 
+          {...register('phoneNumber', { required: 'Номер телефона обязателен' })} 
+          placeholder="Номер телефона" 
+        /> 
+        {errors.phoneNumber && <p className={styles.errorMessage}>{errors.phoneNumber.message}</p>} 
+      </div> 
+      <div className={`${styles.authform__input} ${errors.password ? styles.error : ''}`}> 
+        <input 
+          type={showPassword ? "text" : "password"} 
+          className={styles.authform__input__inputfield} 
+          {...register('password', { required: 'Пароль обязателен' })} 
+          placeholder="Введите пароль" 
+        /> 
+        <span 
+          className={`${styles.authform__input__eye} ${showPassword ? 'show' : ''}`} 
+          onClick={() => setShowPassword(!showPassword)} 
+        ></span> 
+        {errors.password && <p className={styles.errorMessage}>{errors.password.message}</p>} 
+      </div> 
+      <button type="submit">Войти</button> 
+    </form> 
+  ); 
+}; 
+
 export default AuthForm;

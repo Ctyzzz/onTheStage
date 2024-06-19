@@ -9,35 +9,40 @@ import Payment from "@components/Payment/Payment"
 
 
 export const routes = [
-    {
-      path: "/",
-      authComponent: MainPage,
-      nonAuthComponent: NonAuthPage,
-    },
+    { 
+      path: "/", 
+      component: MainPage, 
+      isAuth: true, 
+    }, 
+    { 
+      path: "/nonAuthPage", 
+      component: NonAuthPage, 
+      isAuth: false, 
+    }, 
     {
       path: "/auth",
-      authComponent: Login,
-      nonAuthComponent: Login,
+      component: Login,
+      isAuth: false,
     },
     {
       path: "/registration",
-      authComponent: Registration,
-      nonAuthComponent: Registration,
+      component: Registration,
+      isAuth: false,
     },
     {
       path: "/category",
-      authComponent: Category,
-      nonAuthComponent: Category,
+      component: Category,
+      isAuth: false,
     },
     {
       path: "/subscription",
-      authComponent: Subscription,
-      nonAuthComponent: Subscription,
+      component: Subscription,
+      isAuth: false,
     },
     {
       path: "/payment",
-      authComponent: Payment,
-      nonAuthComponent: Payment,
+      component: Payment,
+      isAuth: false,
     },
 ]
 

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './Subscription.module.scss';
+import { Link } from 'react-router-dom';
 
 import back from '@public/backgroundreg.svg';
 import icorev from "@public/checkreverse.svg";
@@ -32,7 +33,9 @@ const Subscription: React.FC = () => {
       <div className={styles.subscription__block}>
         <div className={styles.subscription__block__header}>
           <h1>Подписка</h1>
-          <p>Пропустить</p>
+          <Link to="/payment">
+            <p >Пропустить</p>
+          </Link>
         </div>
         <p className={styles.subscription__block__text}>
           Подписка продлевается автоматически <br />и отменить можно в любой момент
