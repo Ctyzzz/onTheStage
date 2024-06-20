@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
+import ChatBot from "../BotButton/ChatBot"
 
 import Catalog from "./Parts/Catalog/Catalog";
 import New from "./Parts/New/New";
@@ -30,6 +31,8 @@ const MainPage = () => {
             <TeenSpec/>
             <Musical/>
             <Footer/>
+            <ChatBot/>
+            
         </div>
     );
 }
