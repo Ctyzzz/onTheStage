@@ -1,8 +1,9 @@
 @import "../../static/index.scss";
+@import "../../static/mixins.scss";
 
-.nonAuthPage{
+.nonAuthPage {
     display: flex;
     flex-direction: column;
-    gap: 30%;
+    gap: 30px;
     background-color: #060259;
-}
+  }
