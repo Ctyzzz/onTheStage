@@ -33,7 +33,7 @@ const Footer = () => {
                     </p>
                 </div>
                 <div className={styles["footer__firstblock__copyright"]}>
-                    <p>© {currentYear} Все права защищены</p>
+                    <p>© {currentYear} Все права защищены.</p>
                 </div>
             </div>
             <div className={styles["footer__secondblock"]}>
